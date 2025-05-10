@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PostList from "../components/PostList";
+import "../index.css";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -19,8 +21,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Blog Posts</h1>
+    <div className="home-container">
+      <h1 className="home-title">Blog Posts</h1>
+
+      <div className="create-post-wrapper">
+        <Link to="/create">
+          <button className="create-post-button">Create Post</button>
+        </Link>
+      </div>
+
       {posts.length === 0 ? (
         <p>No posts available.</p>
       ) : (
@@ -31,3 +40,4 @@ const Home = () => {
 };
 
 export default Home;
+

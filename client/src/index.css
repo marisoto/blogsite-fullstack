@@ -1,71 +1,83 @@
-/* Global Styles */
+/* Body setup */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f9fafb; /* Light background */
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  min-height: 100vh; /* Full screen height */
+  background-color: #f0f4f8; /* Pastel blue background */
+  font-family: 'Arial', sans-serif; /* Generic font */
 }
 
-/* Custom Pastel Colors */
-.bg-pastel-pink {
-  background-color: #f8d7db;
-}
-
-.bg-pastel-teal {
-  background-color: #a7d8d4;
-}
-
-.bg-pastel-blue {
-  background-color: #d3e6f3;
-}
-
-.text-pastel-gray {
-  color: #a9a9a9;
-}
-
-.text-pastel-pink {
-  color: #f8d7db;
-}
-
-.text-pastel-teal {
-  color: #a7d8d4;
-}
-
-.text-pastel-blue {
-  color: #d3e6f3;
-}
-
-.card {
-  background-color: #f3f4f6;
-  border-radius: 10px;
+/* Main container for the posts */
+.container {
+  width: 100%;
+  max-width: 800px; /* Set a max width for posts container */
   padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* White background for the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Style for individual blog posts */
+.post {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #e6f7ff; /* Pastel light blue background for each post */
+  border-radius: 8px; /* Rounded corners for posts */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Styling for post titles */
+h2 {
+  font-size: 24px;
+  color: #333; /* Dark gray for title */
+  font-family: 'Georgia', serif; /* Serif font for titles */
+  margin-bottom: 10px;
+}
+
+/* Styling for post content */
+p {
+  color: #666; /* Soft gray color for text */
+  line-height: 1.6;
+}
+
+/* Styling for links to read more */
+a {
+  color: #4fa3f7; /* Pastel blue color for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Add hover effect to links */
+a:hover {
+  text-decoration: underline;
+  color: #003366; /* Darker shade for link hover */
+}
+.home-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.cardTitle {
-  font-size: 1.5rem;
-  color: #333;
+.create-post-button {
+  background-color: #89CFF0;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.cardBody {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Add some spacing and center the content */
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-/* Tailwind utilities like flex, grid, etc., can still be used with pastel classes */
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-center {
-  text-align: center;
+.create-post-button:hover {
+  background-color: #77b5d9;
 }
