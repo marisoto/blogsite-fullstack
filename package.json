@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "axios": "^1.9.0",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  
+  "name": "blogsite-fullstack",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "cd server && node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  
+"scripts": {
+  "dev": "npx nodemon index.js"
+}
+
+
+}
