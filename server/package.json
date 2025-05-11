@@ -14,8 +14,9 @@
     "mongodb": "^6.16.0",
     "mongoose": "^8.14.2"
   },
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  }
+"scripts": {
+  "start": "node server.js",
+  "dev": "nodemon index.js"
+}
+
 }
