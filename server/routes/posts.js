@@ -76,5 +76,18 @@ router.put('/:id', async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+// POST /api/posts/:id/comments
+router.post('/:id/comments', async (req, res) => {
+  const { author, text } = req.body;
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post) return res.status(404).send('Post not found');
+    post.comments.push({ author: author || 'Anonymous', text });
+    await post.save();
+    res.status(201).json(post.comments);
+  } catch (error) {
+    res.status(500).send('Server error');
+  }
+});
 
 module.exports = router;

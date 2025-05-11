@@ -81,3 +81,133 @@ a:hover {
 .create-post-button:hover {
   background-color: #77b5d9;
 }
+/* General Page Layout */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fdf6fd; /* Soft pastel background */
+  min-height: 100vh;
+}
+
+/* Card Container */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.card-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #6c63ff; /* Soft pastel violet */
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fefefe;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  color: white;
+}
+
+.btn.red {
+  background-color: #f87171;
+}
+
+.btn.red:hover {
+  background-color: #ef4444;
+}
+
+.btn.blue {
+  background-color: #a3d8f4;
+}
+
+.btn.blue:hover {
+  background-color: #90c6e9;
+}
+
+.btn.gray {
+  background-color: #f4a3a3;
+}
+
+.btn.gray:hover {
+  background-color: #e99090;
+}
+.divider {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.comments-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.comment-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.comment-list li {
+  margin-bottom: 0.75rem;
+  background: #f4f4f4;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comment-form input,
+.comment-form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+}

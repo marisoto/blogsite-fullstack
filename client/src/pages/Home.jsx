@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1 className="home-title">Blog Posts</h1>
+      <h1 className="home-title">Mari's Blog</h1>
 
       <div className="create-post-wrapper">
         <Link to="/create">
