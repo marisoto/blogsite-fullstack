@@ -48,7 +48,7 @@ npm run dev
 
 🌐 Deployment
 
-    Frontend deployed on Vercel
+    Frontend deployed on Vercel: https://blogsite-fullstack-nqt0ar4vq-dimarisoto-gmailcoms-projects.vercel.app/
 
     Backend can be deployed via Render or Railway
 
