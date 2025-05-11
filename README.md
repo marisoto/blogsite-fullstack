@@ -25,9 +25,9 @@ A fullstack blog web application built with the MERN stack (MongoDB, Express, Re
 
 ### Installation
 
-1. **Clone the repository**
+
 ```bash
-git clone https://github.com/your-username/blogsite-fullstack.git
+git clone https://github.com/marisoto/blogsite-fullstack.git
 cd blogsite-fullstack
 # For frontend
 cd client
