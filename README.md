@@ -1,4 +1,4 @@
-# BlogSite Fullstack
+# Fullstack Blog
 
 A fullstack blog web application built with the MERN stack (MongoDB, Express, React, Node.js). Users can create, read, update, and delete blog posts in a clean and modern interface.
 
@@ -16,21 +16,6 @@ A fullstack blog web application built with the MERN stack (MongoDB, Express, Re
 - **Frontend:** React, Vite, CSS
 - **Backend:** Node.js, Express
 - **Database:** MongoDB
-
-## 📁 Project Structure
-
-blogsite-fullstack/
-├── client/ # React frontend
-│ └── src/
-│ ├── components/
-│ ├── pages/
-│ └── App.jsx
-├── server/ # Express backend
-│ └── routes/
-│ └── models/
-│ └── server.js
-└── README.md
-
 
 ## 🚀 Getting Started
 
