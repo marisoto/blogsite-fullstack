@@ -1,0 +1,39 @@
+/* PostList.css */
+.post-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centers cards horizontally */
+  padding: 20px;
+  align-items: center; /* Aligns cards vertically if necessary */
+}
+
+.post-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 10px; /* Add some space between cards */
+}
+
+.post-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.post-body {
+  font-size: 16px;
+  color: #555;
+}
+
+.post-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  color: #0056b3;
+}

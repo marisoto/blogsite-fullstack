@@ -7,7 +7,9 @@ const CreatePost = () => {
 
   const [newPost, setNewPost] = useState({
     title: "",
+    author: "", // Add author field
     body: "",
+
   });
 
   const handleChange = (e) => {
@@ -55,7 +57,18 @@ const CreatePost = () => {
               required
             />
           </div>
-
+          {/* Author Input Field */}
+          <div className="form-group">
+            <label htmlFor="author">Author</label>
+            <input
+              type="text"
+              id="author"
+              name="author"
+              value={newPost.author}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <div className="form-group">
             <label htmlFor="body">Body</label>
             <textarea
@@ -67,6 +80,8 @@ const CreatePost = () => {
               required
             />
           </div>
+
+
 
           <div className="button-group">
             <button type="submit" className="btn blue">Create Post</button>

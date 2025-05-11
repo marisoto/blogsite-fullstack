@@ -67,6 +67,13 @@ a:hover {
   margin-bottom: 20px;
 }
 
+/* Update for home container to align button to the right */
+.create-post-wrapper {
+  display: flex;
+  justify-content: flex-end; /* Aligns the button to the right */
+  margin-bottom: 20px; /* Adds spacing below the button */
+}
+
 .create-post-button {
   background-color: #89CFF0;
   color: white;
@@ -110,27 +117,35 @@ a:hover {
   color: #6c63ff; /* Soft pastel violet */
 }
 
-/* Form Group */
-.form-group {
-  margin-bottom: 1.25rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: #555;
-}
-
-.form-group input,
-.form-group textarea {
+/* Form input and textarea elements */
+input[type="text"],
+textarea {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
   background-color: #fefefe;
+  margin-bottom: 1rem; /* Ensure consistent margin between fields */
 }
+
+/* Form Group */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+/* Author input field specific styling */
+input[type="text"] {
+  margin-bottom: 1rem; /* Add spacing between inputs */
+}
+
+/* Placeholder Styling */
+input::placeholder,
+textarea::placeholder {
+  color: #aaa; /* Make placeholder text a little lighter */
+  font-style: italic; /* Optional, but improves visibility */
+}
+
 
 /* Button Group */
 .button-group {
@@ -210,4 +225,10 @@ a:hover {
   font-size: 1rem;
   border-radius: 0.4rem;
   border: 1px solid #ccc;
+}
+.home-title {
+  text-align: center;
+  font-size: 3rem; /* Adjust the size as needed */
+  color: #333; /* Choose a color that suits the theme */
+  margin-bottom: 20px; /* Adjust the margin if needed */
 }

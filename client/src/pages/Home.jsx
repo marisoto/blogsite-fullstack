@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PostList from "../components/PostList";
-import "../index.css";
+import "../index.css"; // Ensure this import is correct
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1 className="home-title">Mari's Blog</h1>
+      <h1 className="home-title">Notes</h1>
 
       <div className="create-post-wrapper">
         <Link to="/create">
@@ -40,4 +40,5 @@ const Home = () => {
 };
 
 export default Home;
+
 

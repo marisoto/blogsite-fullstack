@@ -1,10 +1,12 @@
+require('dotenv').config({ path: '../.env' });
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').config();
+
 console.log('MONGODB_URI:', process.env.MONGODB_URI);
 
-
+const Post = require('./models/Post'); // Make sure the Post model is imported
 const postRoutes = require('./routes/posts');
 
 const app = express();
@@ -39,7 +41,10 @@ app.get('/', (req, res) => {
 app.delete('/posts/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    await Post.findByIdAndDelete(id); // Assuming you're using MongoDB and Mongoose
+    const post = await Post.findByIdAndDelete(id);
+    if (!post) {
+      return res.status(404).send('Post not found');
+    }
     res.status(200).send('Post deleted');
   } catch (error) {
     res.status(500).send('Error deleting post');

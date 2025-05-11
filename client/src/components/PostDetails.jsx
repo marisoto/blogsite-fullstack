@@ -64,6 +64,10 @@ const PostDetails = () => {
     <div className="page-container">
       <div className="card">
         <h1 className="card-title">{post.title}</h1>
+        
+        {/* Display Author of the Post */}
+        <p className="card-author"><strong>Author: </strong>{post.author || 'Anonymous'}</p>
+        
         <p className="card-body">{post.body}</p>
 
         <div className="button-group">

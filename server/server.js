@@ -1,4 +1,4 @@
-// server.js
+require('dotenv').config({ path: '../.env' });
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -12,11 +12,15 @@ const port = 5000;
 app.use(express.json()); // To parse incoming JSON requests
 app.use(cors()); // Allow cross-origin requests
 
-// Use the routes
-app.use('/posts', postRoutes);
+// Use the routes - prefix with '/api'
+app.use('/api/posts', postRoutes);  // This ensures all post routes are under /api/posts
 
-// MongoDB connection
-mongoose.connect('mongodb://localhost:27017/blog', {
+// MongoDB connection URI (with fallback)
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/blog';  // Default fallback
+
+console.log('Mongo URI:', mongoURI);  // Debugging to ensure the URI is correct
+
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
