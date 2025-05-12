@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../index.css';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+// Hardcoded API URL
+const API_BASE_URL = 'https://blogsite-fullstack.onrender.com';
 
 const PostDetails = () => {
   const { id } = useParams();
