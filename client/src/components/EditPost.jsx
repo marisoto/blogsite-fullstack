@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "../index.css"; // Import your custom CSS
+import "../index.css";
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
 const EditPost = () => {
   const { id } = useParams();
@@ -9,28 +11,23 @@ const EditPost = () => {
     title: "",
     body: "",
   });
+  const [loading, setLoading] = useState(true);
 
- const [loading, setLoading] = useState(true);
-
-useEffect(() => {
-  const fetchPost = async () => {
-    try {
-      const response = await fetch(`http://localhost:5000/api/posts/${id}`);
-      if (!response.ok) throw new Error("Failed to fetch post");
-      const data = await response.json();
-      setPost(data);
-    } catch (error) {
-      console.error("Error fetching post:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  fetchPost();
-}, [id]);
-
-if (loading) return <div className="page-container"><p>Loading...</p></div>;
-if (!post) return <div className="page-container"><p>Post not found.</p></div>;
-
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/posts/${id}`);
+        if (!response.ok) throw new Error("Failed to fetch post");
+        const data = await response.json();
+        setPost(data);
+      } catch (error) {
+        console.error("Error fetching post:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchPost();
+  }, [id]);
 
   const handleChange = (e) => {
     setPost({
@@ -42,7 +39,7 @@ if (!post) return <div className="page-container"><p>Post not found.</p></div>;
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/posts/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -59,6 +56,9 @@ if (!post) return <div className="page-container"><p>Post not found.</p></div>;
       console.error("Error updating post:", error);
     }
   };
+
+  if (loading) return <div className="page-container"><p>Loading...</p></div>;
+  if (!post) return <div className="page-container"><p>Post not found.</p></div>;
 
   return (
     <div className="page-container">

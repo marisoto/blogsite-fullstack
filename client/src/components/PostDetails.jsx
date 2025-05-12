@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../index.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+
 const PostDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const [comment, setComment] = useState({ author: '', text: '' });
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const PostDetails = () => {
 
   const fetchPost = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${id}`);
+      const response = await fetch(`${API_BASE_URL}/api/posts/${id}`);
       if (!response.ok) throw new Error('Post not found');
       const data = await response.json();
       setPost(data);
@@ -29,7 +30,7 @@ const PostDetails = () => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://localhost:5000/api/posts/${id}`, {
+      await fetch(`${API_BASE_URL}/api/posts/${id}`, {
         method: 'DELETE',
       });
       navigate('/');
@@ -43,7 +44,7 @@ const PostDetails = () => {
     if (!comment.text.trim()) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${id}/comments`, {
+      const response = await fetch(`${API_BASE_URL}/api/posts/${id}/comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(comment),
@@ -64,10 +65,7 @@ const PostDetails = () => {
     <div className="page-container">
       <div className="card">
         <h1 className="card-title">{post.title}</h1>
-        
-        {/* Display Author of the Post */}
         <p className="card-author"><strong>Author: </strong>{post.author || 'Anonymous'}</p>
-        
         <p className="card-body">{post.body}</p>
 
         <div className="button-group">

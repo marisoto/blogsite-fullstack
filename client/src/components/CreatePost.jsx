@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../index.css"; // Make sure you import your CSS file
+import "../index.css";
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
 const CreatePost = () => {
   const navigate = useNavigate();
 
   const [newPost, setNewPost] = useState({
     title: "",
-    author: "", // Add author field
+    author: "",
     body: "",
-
   });
 
   const handleChange = (e) => {
@@ -22,7 +23,7 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/posts", {
+      const response = await fetch(`${API_BASE_URL}/api/posts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +58,6 @@ const CreatePost = () => {
               required
             />
           </div>
-          {/* Author Input Field */}
           <div className="form-group">
             <label htmlFor="author">Author</label>
             <input
@@ -80,8 +80,6 @@ const CreatePost = () => {
               required
             />
           </div>
-
-
 
           <div className="button-group">
             <button type="submit" className="btn blue">Create Post</button>
