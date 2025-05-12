@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/posts');
+        const response = await fetch('https://blogsite-fullstack.onrender.com/api/posts');
         const data = await response.json();
         setPosts(data);
       } catch (error) {
