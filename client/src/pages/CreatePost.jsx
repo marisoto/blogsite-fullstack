@@ -12,7 +12,12 @@ const CreatePost = () => {
     e.preventDefault();
     try {
       // Send title, body, and author data in the POST request
-      await axios.post('http://localhost:5000/api/posts', { title, body, author });
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/posts`, {
+  title,
+  body,
+  author,
+});
+
       navigate('/');
     } catch (err) {
       console.error('Error creating post:', err);
