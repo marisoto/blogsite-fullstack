@@ -10,11 +10,11 @@
     "concurrently": "^9.1.2",
     "nodemon": "^2.0.15"
   },
-  "scripts": {
-    "client": "cd client && npm run dev",
-    "server": "cd server && npm run dev",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server-dev": "cd server && npx nodemon server.js",
-    "client-dev": "cd client && npm run dev"
-  }
+"scripts": {
+  "client": "cd client && npm run dev",  
+  "server": "cd server && npm run dev",  
+  "dev": "concurrently \"npm run server\" \"npm run client\"",  
+  "server-dev": "cd server && npx nodemon server.js",  
+  "client-dev": "cd client && npm run dev"
+}
 }
